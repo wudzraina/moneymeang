@@ -1,0 +1,44 @@
+
+
+  .container{
+    width: 60% !important
+  }
+
+
+mat-slider {  
+    width: 100%;
+}
+
+div.mat-slider-thump-label{
+    width: 500px;
+}   
+ 
+.example-form {
+    width: 100%;
+}
+ 
+
+
+
+
+
+.example-full-width {
+    width: 100%;
+}
+
+.amount{
+    margin-top: -17px;
+    position: absolute;
+   
+}
+.detail{
+    padding-top: 20px;
+}
+
+
+
+.example-button-row button,.example-button-row a {
+    margin-right: 8px;
+    width: 100%;
+  }
+  

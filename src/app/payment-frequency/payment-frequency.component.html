@@ -1,0 +1,97 @@
+
+  
+    <div class="container">
+       
+        <h1>Quote Calcuator</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Product</mat-label>
+                    <mat-select [(ngModel)]="ProductValue" name="Product">
+                    <mat-option *ngFor="let prod of product" [value]="prod.value">
+                        {{prod.viewValue}}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-12">
+                <mat-slider
+                    thumbLabel
+                    [displayWith]="formatLabel"
+                    tickInterval="100"
+                    step="100"
+                    min="0"
+                    max="15000"
+                    (input)="Amount = $event.value" 
+                    [value]="Amount">
+                    aria-label="units">
+                </mat-slider>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12"> 
+                <!-- <span class="label label-primary">{{Amount}}</span> -->
+                <mat-label class="amount">$ {{Amount}}</mat-label>
+            </div>
+
+        </div>
+        <div class="row detail" >
+            <div class="col-2">
+                <mat-form-field class="example-full-width"  appearance="fill">
+                    <mat-label>Title</mat-label>
+                    <mat-select [(ngModel)]="TitleValue" name="Mr">
+                    <mat-option *ngFor="let title of titles" [value]="title.value">
+                        {{title.viewValue}}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-5"> 
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>First name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-5"> 
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Last name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-md-7"> 
+                <!-- <form class="example-form"> -->
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Email</mat-label>
+                      <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. sample@example.com">
+                      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                      </mat-error>
+                      <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                <!-- </form> -->
+            </div>
+            <div class="col-md-5"> 
+                <!-- <form class="example-form"> -->
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Mobile Number</mat-label>
+                      <!-- <span matPrefix>+1 &nbsp;</span> -->
+                      <input type="tel" matInput placeholder="0000-000-1234">
+                      <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+                    </mat-form-field>
+                  <!-- </form> -->
+            </div>
+        </div>
+        <div class="col-md-12"> 
+            <div class="example-button-row">
+                <button mat-stroked-button color="success" (click)="handleClick($event)">Calculate quote</button>
+            </div>
+        </div>
+    </div>
+ 

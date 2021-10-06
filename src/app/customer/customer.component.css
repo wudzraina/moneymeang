@@ -1,0 +1,26 @@
+
+  .container{
+    width: 60% !important
+  }
+
+.row-padding{
+    padding-bottom: 1.5em;
+}
+
+.row-padding-md{
+    padding-bottom: .8em;
+}
+
+.row-font-size{
+    font-size:  0.775em
+}
+
+.example-button-row button,.example-button-row a {
+    margin-right: 8px;
+    width: 100%;
+}
+
+.text-right {
+  text-align: right;
+}
+
